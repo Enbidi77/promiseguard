@@ -1,6 +1,6 @@
 {
   "name": "promiseguard",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Lightweight, strongly typed async execution-control library for JavaScript and TypeScript with retries, timeouts, cancellation, concurrency, and observability.",
   "keywords": [
     "promise",
