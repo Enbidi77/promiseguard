@@ -1,0 +1,81 @@
+{
+  "name": "promiseguard",
+  "version": "1.0.0",
+  "description": "Lightweight, strongly typed async execution-control library for JavaScript and TypeScript with retries, timeouts, cancellation, concurrency, and observability.",
+  "keywords": [
+    "promise",
+    "async",
+    "retry",
+    "timeout",
+    "concurrency",
+    "rate-limit",
+    "p-limit",
+    "p-retry",
+    "p-timeout",
+    "backoff",
+    "cancellation",
+    "abortcontroller",
+    "resilience"
+  ],
+  "homepage": "https://github.com/promiseguard/promiseguard#readme",
+  "bugs": {
+    "url": "https://github.com/promiseguard/promiseguard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/promiseguard/promiseguard.git"
+  },
+  "license": "MIT",
+  "author": "PromiseGuard Contributors",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/ tests/ examples/",
+    "format:check": "prettier --check \"{src,tests,examples}/**/*.{ts,js,json,md}\"",
+    "format": "prettier --write \"{src,tests,examples}/**/*.{ts,js,json,md}\"",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build && publint",
+    "changeset": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "publint": "^0.3.25",
+    "tsup": "^8.5.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  }
+}
